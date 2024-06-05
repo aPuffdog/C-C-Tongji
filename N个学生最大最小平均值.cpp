@@ -1,6 +1,6 @@
-// 2252902 ������
-// ���Ӽ��������N��ѧ����ѧ�źͳɼ����뵽�ļ�student.dat�С�
-// �ٴ��ļ��ж�ȡѧ������Ϣ�������߷֡���ͷֺ��ܷ֡�N��ͨ�����ų������ж����С
+// 2252902 赵梓成
+// 将从键盘输入的N个学生的学号和成绩存入到文件student.dat中。
+// 再从文件中读取学生的信息，求出最高分、最低分和总分。N可通过符号常量自行定义大小
 
 #include<iostream>
 #include<fstream>
@@ -13,9 +13,9 @@ int main()
 {
 	int N, score;
 	string num;
-	cout << "�����㽫Ҫ����ѧ����������С��100����" << endl;
+	cout << "输入你将要输入学生的数量（小于100）：" << endl;
 	cin >> N;
-	cout << "����������ѧ����ѧ�źͳɼ���" << endl;
+	cout << "请逐行输入学生的学号和成绩：" << endl;
 
 	ofstream out("student.dat");
 	streambuf* coutbuf = cout.rdbuf();
@@ -33,14 +33,13 @@ int main()
 	}
 
 	cout.rdbuf(coutbuf);
-	cout << "���Ѿ���ɴ洢����ʼ���ж�ȡ�ͷ�����\n" << endl;
+	cout << "现已经完成存储，开始进行读取和分析：\n" << endl;
 
 	cin.rdbuf(in.rdbuf());
 	
 	n = N;
 
-	int minS = 151, maxS = -1;
-	double ave = 0;
+	int minS = 151, maxS = -1, all = 0;
 	string minNum = "", maxNum = "";
 
 	while (n--)
@@ -56,19 +55,18 @@ int main()
 			maxS = score;
 			maxNum = num;
 		}
-		ave += score;
+		all += score;
 	}
-	ave = ave / N;
 
-	cout << "��߷��� " << maxNum << " ͬѧ" << " ����Ϊ:" << maxS << endl;
-	cout << "��ͷ��� " << minNum << " ͬѧ" << " ����Ϊ:" << minS << endl;
-	cout << "ƽ������ " << setprecision(4) << ave << endl;
+	cout << "最高分是 " << maxNum << " 同学" << " 分数为:" << maxS << endl;
+	cout << "最低分是 " << minNum << " 同学" << " 分数为:" << minS << endl;
+	cout << "总分是 " << all << endl;
 
 	return 0;
 }
 
 /*
-�������룺
+样例输入：
 10
 2023001 85
 2023002 90
@@ -83,8 +81,8 @@ int main()
 */
 
 /*
-���������
-��߷��� 2023007 ͬѧ ����Ϊ:95
-��ͷ��� 2023006 ͬѧ ����Ϊ:76
-ƽ������ 85.7
+样例输出：
+最高分是 2023007 同学 分数为:95
+最低分是 2023006 同学 分数为:76
+总分是 857
 */
