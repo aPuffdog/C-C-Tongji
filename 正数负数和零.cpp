@@ -1,6 +1,6 @@
-// 2252902 ÕÔè÷³É
-// ÎÒÃÇÑ§ÁËÒ»Ñ§ÆÚ C++£¬¶øÇÒ C++ ´¦ÀíÎÄ¼þ¸ü°²È«£¬»¹ÊÇÓÃ C++ Ð´·¨À´Íê³ÉÎÄ¼þÁ·Ï°°É
-// Èç¹ûÔÄ¾íÈË¿´²»ºÜ¶®¿ÉÒÔÍ¨¹ýÕ³ÌùÔËÐÐÀ´ÅÐ¶¨·ÖÊý
+// 2252902 èµµæ¢“æˆ
+// æˆ‘ä»¬å­¦äº†ä¸€å­¦æœŸ C++ï¼Œè€Œä¸” C++ å¤„ç†æ–‡ä»¶æ›´å®‰å…¨ï¼Œè¿˜æ˜¯ç”¨ C++ å†™æ³•æ¥å®Œæˆæ–‡ä»¶ç»ƒä¹ å§
+// å¦‚æžœé˜…å·äººçœ‹ä¸å¾ˆæ‡‚å¯ä»¥é€šè¿‡ç²˜è´´è¿è¡Œæ¥åˆ¤å®šåˆ†æ•°
 
 #include <iostream>
 #include <fstream>
@@ -9,11 +9,11 @@ using namespace std;
 
 int main()
 {
-    ifstream in("text.txt");
+    ifstream in("f2.txt");
     streambuf* cinbuf = cin.rdbuf();
     cin.rdbuf(in.rdbuf());
     int n, po = 0, ne = 0, ze = 0;
-    while (cin >> n) // ÌâÄ¿ÌáÊ¾ÖÐËµ¿ÉÒÔÓÃ fscanf ÎÒ²ÂÊÇÏ£ÍûÊ¹ÓÃ != EOF µÄÅÐ¶¨·½Ê½£¬µ«ÊÇcpp²»ÓÃÄÇÃ´Âé·³ÄØ
+    while (cin >> n) // é¢˜ç›®æç¤ºä¸­è¯´å¯ä»¥ç”¨ fscanf æˆ‘çŒœæ˜¯å¸Œæœ›ä½¿ç”¨ != EOF çš„åˆ¤å®šæ–¹å¼ï¼Œä½†æ˜¯cppä¸ç”¨é‚£ä¹ˆéº»çƒ¦å‘¢
     {
         if (n > 0)
             po++;
@@ -22,6 +22,6 @@ int main()
         else
             ne++;
     }
-    cout << "ÕýÊý¸öÊýÎª£º" << po << "\n¸ºÊý¸öÊýÎª£º" << ne << "\nÁãµÄ¸öÊýÎª£º" << ze;
+    cout << "æ­£æ•°ä¸ªæ•°ä¸ºï¼š" << po << "\nè´Ÿæ•°ä¸ªæ•°ä¸ºï¼š" << ne << "\né›¶çš„ä¸ªæ•°ä¸ºï¼š" << ze;
     return 0;
 }
